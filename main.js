@@ -6,6 +6,7 @@
 
     const
 
+        //Various DOM attributes and values that we're moving up here for reuse
         MAGIC_ATTRIBUTE_FOR_ROLE                = 'data-role',
         MAGIC_ATTRIBUTE_FOR_WORD_COUNT          = 'data-word-count',
         MAGIC_ATTRIBUTE_FOR_DELIM               = 'data-delim',
@@ -21,16 +22,19 @@
         MAGIC_VALUE_FOR_ROLE_TEXT_COLUMN        = 'text-column',
         MAGIC_VALUE_FOR_ROLE_TEXT_CELL          = 'text-cell',
 
-        CSS_SELECTOR_CONTAINS_WORD = '~=',
-        CSS_LEFT_SQUARE_BRACKET = '[',
-        CSS_RIGHT_SQUARE_BRACKET = ']',
+        //CSS selector stuff
+        CSS_SELECTOR_CONTAINS_WORD  = '~=',
+        CSS_LEFT_SQUARE_BRACKET     = '[',
+        CSS_RIGHT_SQUARE_BRACKET    = ']',
 
+        //Shortcuts for the above
         CW = CSS_SELECTOR_CONTAINS_WORD,
         LB = CSS_LEFT_SQUARE_BRACKET,
         RB = CSS_RIGHT_SQUARE_BRACKET,
 
-        MAGIC_SELECTOR_FOR_IMAGE_CONTAINER = LB + MAGIC_ATTRIBUTE_FOR_ROLE + CW + MAGIC_VALUE_FOR_ROLE_CONTAINER + RB,
-        MAGIC_SELECTOR_FOR_TEXT_LINE       = LB + MAGIC_ATTRIBUTE_FOR_ROLE + CW + MAGIC_VALUE_FOR_ROLE_TEXT_LINE + RB,
+        //Shortcuts for full selectors
+        MAGIC_SELECTOR_FOR_IMAGE_CONTAINER = LB + MAGIC_ATTRIBUTE_FOR_ROLE + CW + MAGIC_VALUE_FOR_ROLE_CONTAINER   + RB,
+        MAGIC_SELECTOR_FOR_TEXT_LINE       = LB + MAGIC_ATTRIBUTE_FOR_ROLE + CW + MAGIC_VALUE_FOR_ROLE_TEXT_LINE   + RB,
         MAGIC_SELECTOR_FOR_TEXT_COLUMN     = LB + MAGIC_ATTRIBUTE_FOR_ROLE + CW + MAGIC_VALUE_FOR_ROLE_TEXT_COLUMN + RB,
 
         is_numeric = function(n)
