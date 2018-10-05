@@ -4,6 +4,8 @@ Pretty much just read the `index.html` file, that should describe things for you
 ## Objects
 There are three objects that you need to provide for the system to work, a *Container*, several *Text Lines* and lastly the individual *Text Words*. The first two should be obvious however *Text Words*, although they are generally "words" as you expect, one "word" can actually contain multiple English words separated by a space. For instance, you can tell the system that "Pizza Is" should be treated as a "word" as far as vertically shifting text is concerned. See the section on *Text Line* below for how to use the `data-delim` attribute to achieve this.
 
+The system will take the provided objects and generate two new objects, a *Text Column* with *Text Cells*, with the latter containing the individual words. It will then use the CSS `transform` property with the `translateY` function to offset by a percentage-based amount. Because of this, absolute heights should be accounted for. See the sample CSS.
+
 ### Container
 Your word container is identified by `data-role="text-slider-container"` and it must have `data-word-count="2"` set as well. For now, only two words are supported because I don't know how visually to shift other combinations. You may optionally also set `data-interval-in-ms` otherwise it defaults to 500. The tag for the container (in the example below a `<div>`) does not matter but you probably want something that's going to end up rendering block-ish.
 
