@@ -1,3 +1,4 @@
+/*Just setting a base line here*/
 html
 {
     font-size: 62.5%;
@@ -12,35 +13,51 @@ body
 
 [data-role~=text-slider-container]
 {
+    /*Our container should be a block or a block-ish thing*/
     display: block;
+    
+    /*In order for things to hide "above" and "below" the container needs a fixed height*/
     height: 4rem;
+    
+    /*We don't want to show what is above and below*/
     overflow: hidden;
+    
+    /*This is only for the POC and is optional. However, watch out for font ascenders and descenders!*/
     text-transform: uppercase;
 }
 
 [data-role~=text-slider-container] [data-role~=text-line]
 {
+    /*Hide the supplied lines of text because we are generating new DOM elements in JS*/
     display: none;
 }
 
 [data-role~=text-slider-container] [data-role~=text-column]
 {
+    /*The individual "words" should be on the same line*/
     display: inline-block;
+    
+    /*This should match the container's height*/
     font-size: 4rem;
+    
+    /*We're using a UL so turn off most standard list things except we want a little horizontal space*/
     list-style-type: none;
     margin: 0 1rem;
     padding: 0;
+    
+    /*Tweak as necessary*/
     transition: all 250ms ease-in;
 }
 
 [data-role~=text-slider-container] [data-role~=text-column] [data-role~=text-cell]
-{
-    height: 4rem;
+{    
+    /*Once again, turn of list things*/
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
+/*Make the two "words" meet in the middle*/
 [data-role~=text-slider-container] [data-role~=text-column][data-column-index="0"]
 {
     text-align: right;
